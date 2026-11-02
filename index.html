@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مدرستي اليمن — المنصة التعليمية المتكاملة لطلاب اليمن</title>
+<meta name="description" content="منصة مدرستي اليمن: دروس مصوّرة، اختبارات تفاعلية، واجبات ودرجات وحضور، للطالب والمعلم وولي الأمر والإدارة — من الصف الأول إلى الثالث الثانوي وفق المنهج اليمني.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/modules.css?v=20261028-dialogues-companion-scenes">
+</head>
+<body>
+
+<!-- ================= واجهة الموقع (Landing) ================= -->
+<div id="landingView">
+  <div class="top-strip">
+    <div class="container strip-inner">
+      <span>🇾🇪 الجمهورية اليمنية — منصة تعليمية لخدمة طلاب اليمن من المهرة إلى صعدة</span>
+      <span class="strip-links"><a href="#newsSection">آخر الإعلانات</a> · <a href="#" onclick="openLogin('admin');return false;">دخول الإدارات المدرسية</a></span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+        <span class="brand-badge">🎓</span>
+        <span class="brand-text"><strong>مدرستي اليمن</strong><small>Madrasati Yemen</small></span>
+      </a>
+      <nav class="main-nav" id="mainNav">
+        <a href="#rolesSection">من أين تبدأ؟</a>
+        <a href="#curriculumSection">المناهج</a>
+        <a href="#featuredSection">دروس مختارة</a>
+        <a href="#englishSpot">إنجليزية ثامن 🇬🇧</a>
+        <a href="#featuresSection">المزايا</a>
+        <a href="#newsSection">الإعلانات</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost" onclick="openLogin()">تسجيل الدخول</button>
+        <button class="btn btn-primary" onclick="openLogin('student')">ابدأ التعلّم مجاناً</button>
+        <button class="hamburger" id="hamburger" aria-label="القائمة">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="hero-chip">✨ المنهج اليمني كاملاً · من الصف الأول إلى الثالث الثانوي</span>
+        <h1>مدرستك معك…<br><span>أينما كنت في اليمن</span></h1>
+        <p class="hero-sub">دروس مرئية ومكتوبة، اختبارات تفاعلية بتصحيح فوري، واجبات ودرجات وحضور — في منصة واحدة تجمع <strong>الطالب والمعلم وولي الأمر والإدارة</strong>، وتعمل بسلاسة حتى مع الإنترنت الضعيف.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary btn-lg" onclick="openLogin('student')">🚀 ابدأ الآن كطالب</button>
+          <a class="btn btn-white btn-lg" href="#featuredSection">استكشف الدروس ↓</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong data-count="1840">٠</strong><small>درس تعليمي</small></div>
+          <div><strong data-count="126000" data-suffix="+">٠</strong><small>طالب وطالبة</small></div>
+          <div><strong data-count="21">٠</strong><small>محافظة يمنية</small></div>
+          <div><strong data-count="4600" data-suffix="+">٠</strong><small>اختبار تفاعلي</small></div>
+        </div>
+      </div>
+      <div class="hero-media">
+        <img src="assets/img/hero.jpg" alt="طلاب يمنيون أمام مدرستهم وبخلفهم معالم صنعاء القديمة">
+        <div class="float-card fc1">🏆 <div><strong>أوسمة تفوق</strong><small>٢٬٤٥٠ نقطة هذا الفصل</small></div></div>
+        <div class="float-card fc2">✅ <div><strong>تصحيح فوري</strong><small>مع شرح لكل إجابة</small></div></div>
+        <div class="float-card fc3">📶 <div><strong>يعمل بنت ضعيف</strong><small>حمّل الدرس وذاكر بدون اتصال</small></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rolesSection">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">بوابة واحدة لأسرتك التعليمية كاملة</span>
+        <h2>من أين تريد أن تبدأ؟</h2>
+        <p>اختر دورك للدخول إلى لوحتك الخاصة — في النسخة التجريبية يمكنك تجربة الأدوار الأربعة كلها بنقرة واحدة.</p>
+      </div>
+      <div class="roles-grid">
+        <article class="role-card" onclick="loginAs('student')">
+          <div class="role-icon" style="background:#e8f2fe">🧑‍🎓</div>
+          <h3>أنا طالب</h3>
+          <p>دروس صفي، واجباتي، اختباراتي، درجاتي ونقاطي وأوسمتي.</p>
+          <span class="role-link">دخول لوحة الطالب ←</span>
+        </article>
+        <article class="role-card" onclick="loginAs('teacher')">
+          <div class="role-icon" style="background:#e6f7ef">👩‍🏫</div>
+          <h3>أنا معلّم</h3>
+          <p>شُعبي وطلابي، إضافة دروس وواجبات، رصد درجات ومتابعة تقدم.</p>
+          <span class="role-link">دخول لوحة المعلم ←</span>
+        </article>
+        <article class="role-card" onclick="loginAs('parent')">
+          <div class="role-icon" style="background:#fff2e0">👨‍👧‍👦</div>
+          <h3>أنا ولي أمر</h3>
+          <p>درجات الأبناء وحضورهم وواجباتهم، ورسائل المعلمين أولاً بأول.</p>
+          <span class="role-link">دخول لوحة ولي الأمر ←</span>
+        </article>
+        <article class="role-card" onclick="loginAs('admin')">
+          <div class="role-icon" style="background:#f3eefe">🏫</div>
+          <h3>إدارة المدرسة</h3>
+          <p>إحصائيات المدرسة والمحافظات، إدارة المستخدمين والتقارير.</p>
+          <span class="role-link">دخول لوحة الإدارة ←</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt" id="curriculumSection">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">وفق المنهج اليمني المعتمد</span>
+        <h2>اختر صفّك ومادتك</h2>
+        <p>اضغط على أي صف للانتقال مباشرة إلى دروسه داخل المنصة.</p>
+      </div>
+      <div class="grade-strip" id="gradeStrip"></div>
+      <div class="subjects-grid" id="subjectsGrid"></div>
+    </div>
+  </section>
+
+  <section class="section eng-spot" id="englishSpot">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">جديد بتعمّق: منهج موثّق صفحةً بصفحة</span>
+        <h2>🇬🇧 إنجليزية الصف الثامن — <span dir="ltr">Crescent Book 2</span></h2>
+        <p>أول مسار منهجي كامل في المنصة: 7 وحدات و107 خطوات تعليمية مستخرجة من دليل المعلم الرسمي لوزارة التربية اليمنية، وكل خطوة مربوطة بصفحات كتاب الطالب وكتاب الأنشطة — بلا أي محتوى مخترع يُنسب للمنهج.</p>
+      </div>
+      <div class="eng-cards">
+        <article class="eng-card"><div class="e-ic">🗂️</div><h3>مسار الوحدات الموثّق</h3><p>الوحدة الأولى كاملة بـ12 خطوة: التحية والتعريف، الطعام والإعجاب، الوقت والروتين، البيانات الشخصية، غرف البيت — مع أهداف الدرس ومفرداته الموثقة واستماع لكل جملة.</p><button class="btn btn-primary" onclick="loginAs('student');setTimeout(()=>navigate('english8'),50)">افتح مسار الوحدات ←</button></article>
+        <article class="eng-card"><div class="e-ic">🤖</div><h3>رفيق اللغة — 5 أنماط تدريب</h3><p>تبادل أدوار على مواقف، ووضع جديد لـ37 حواراً من جزأي Pupil's Book بصوت مولّد بسرعات 0.6 و0.8 و1.0، وحوار طالبين على جهاز واحد، وقصة تفاعلية، وتدريب نطق بالتسجيل والمقارنة المحلية دون درجات وهمية.</p><button class="btn btn-primary" onclick="loginAs('student');setTimeout(()=>navigate('chatbot'),50)">تدرّب مع الرفيق ←</button></article>
+        <article class="eng-card"><div class="e-ic">✨</div><h3>استوديو المعلم الذكي</h3><p>للمعلم: أنشئ لعبة أو بطاقات أو اختباراً أو ورقة عمل من لغة الدرس، عايِنها كما يراها الطالب، حرّرها، راجِع مصدرها ثم انشرها لشعبتك — في دقائق.</p><button class="btn btn-primary" onclick="loginAs('teacher');setTimeout(()=>navigate('aistudio'),50)">افتح استوديو المعلم ←</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="featuredSection">
+    <div class="container">
+      <div class="section-head row">
+        <div>
+          <span class="eyebrow">الأكثر مشاهدة هذا الأسبوع</span>
+          <h2>دروس مختارة لك</h2>
+        </div>
+        <button class="btn btn-ghost" onclick="loginAs('student');setTimeout(()=>navigate('lessons'),50)">عرض كل الدروس ←</button>
+      </div>
+      <div class="lessons-grid" id="featuredLessons"></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="featuresSection">
+    <div class="container features-grid">
+      <div class="features-media">
+        <img src="assets/img/online-learning.jpg" alt="طالبة يمنية تذاكر من منزلها عبر المنصة">
+        <div class="features-badge">📚 تعلّم من البيت أو المدرسة<br><strong>بلا انقطاع</strong></div>
+      </div>
+      <div>
+        <span class="eyebrow">لماذا «مدرستي اليمن»؟</span>
+        <h2 class="features-title">مصممة لواقعنا… وطموحنا</h2>
+        <div class="feature-list">
+          <div class="feature-item"><span>📶</span><div><h4>خفيفة على الإنترنت الضعيف</h4><p>صفحات سريعة ودروس قابلة للتحميل والمذاكرة بدون اتصال — لأن استمرار التعليم لا ينتظر شبكة قوية.</p></div></div>
+          <div class="feature-item"><span>✅</span><div><h4>اختبارات بتصحيح وشرح فوري</h4><p>لا نكتفي بـ«خطأ»؛ كل سؤال معه شرح الإجابة الصحيحة ليتعلم الطالب من كل محاولة.</p></div></div>
+          <div class="feature-item"><span>👨‍👩‍👧</span><div><h4>ولي الأمر شريك حاضر</h4><p>الدرجات والحضور والواجبات ورسائل المعلمين تصل الأهل أولاً بأول.</p></div></div>
+          <div class="feature-item"><span>🏆</span><div><h4>تحفيز بالنقاط والأوسمة</h4><p>سلاسل أيام متتالية، وسام، ولوحة صدارة للشعبة تحوّل المذاكرة إلى عادة ممتعة.</p></div></div>
+          <div class="feature-item"><span>🇾🇪</span><div><h4>أمثلة من حياتنا اليمنية</h4><p>من سد مأرب وباب المندب إلى المدرجات الزراعية وأسواق صنعاء — المنهج يُشرح بلسان أهله.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="container stats-band-inner">
+      <div><strong>٩٤٪</strong><span>من الطلاب تحسّنت درجاتهم خلال فصل واحد</span></div>
+      <div><strong>١٬٨٤٠</strong><span>مدرسة تستخدم المنصة في ٢١ محافظة</span></div>
+      <div><strong>٢٤/٧</strong><span>دروس متاحة في أي وقت ومن أي جهاز</span></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">يقولون عن المنصة</span><h2>أصوات من مدارس اليمن</h2></div>
+      <div class="quotes-grid" id="quotesGrid"></div>
+    </div>
+  </section>
+
+  <section class="section alt" id="newsSection">
+    <div class="container">
+      <div class="section-head"><span class="eyebrow">لوحة الإعلانات</span><h2>آخر الأخبار والتنبيهات</h2></div>
+      <div class="news-grid" id="newsGrid"></div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>جاهز تبدأ رحلة التفوّق؟</h2>
+      <p>حسابك التجريبي جاهز الآن — ادخل كطالب أو معلم أو ولي أمر أو إدارة بنقرة واحدة.</p>
+      <button class="btn btn-white btn-lg" onclick="openLogin()">تسجيل الدخول إلى المنصة ←</button>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="brand light"><span class="brand-badge">🎓</span><span class="brand-text"><strong>مدرستي اليمن</strong><small>Madrasati Yemen</small></span></div>
+        <p class="footer-desc">منصة التعليم المدرسي المتكاملة لليمن: منهج كامل من الصف الأول حتى الثالث الثانوي، للطالب والمعلم وولي الأمر والإدارة.</p>
+      </div>
+      <div><h5>المنصة</h5><a href="#curriculumSection">المناهج والصفوف</a><a href="#featuredSection">الدروس المختارة</a><a href="#featuresSection">لماذا نحن؟</a><a href="#newsSection">الإعلانات</a></div>
+      <div><h5>البوابات</h5><a href="#" onclick="loginAs('student');return false;">بوابة الطالب</a><a href="#" onclick="loginAs('teacher');return false;">بوابة المعلم</a><a href="#" onclick="loginAs('parent');return false;">بوابة ولي الأمر</a><a href="#" onclick="loginAs('admin');return false;">بوابة الإدارة</a></div>
+      <div><h5>تواصل معنا</h5><p>📍 صنعاء – الجمهورية اليمنية</p><p>✉️ support@madrasati-yemen.edu</p><p>📞 ‎+967 1 000 000</p><p class="footer-hours">الدعم: السبت – الخميس · ٨ص – ٨م</p></div>
+    </div>
+    <div class="footer-bottom container"><span>© ٢٠٢٦ مدرستي اليمن — جميع الحقوق محفوظة.</span><span>نسخة تجريبية تعليمية (Demo) — البيانات المعروضة لأغراض العرض.</span></div>
+  </footer>
+</div>
+
+<!-- ================= تطبيق المنصة (لوحات التحكم) ================= -->
+<div id="appView" class="hidden">
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="side-brand"><span class="brand-badge">🎓</span><div><strong>مدرستي اليمن</strong><small id="sideSchool">مدرسة الأمل النموذجية</small></div></div>
+      <div class="side-user">
+        <span class="avatar" id="sideAvatar">أح</span>
+        <div class="side-user-text"><strong id="sideName">—</strong><small id="sideMeta">—</small></div>
+      </div>
+      <nav class="side-nav" id="sideNav"></nav>
+      <div class="side-role-switch">
+        <label>تجربة دور آخر:</label>
+        <div class="role-chips">
+          <button data-role="student" onclick="loginAs('student')">طالب</button>
+          <button data-role="teacher" onclick="loginAs('teacher')">معلم</button>
+          <button data-role="parent" onclick="loginAs('parent')">ولي أمر</button>
+          <button data-role="admin" onclick="loginAs('admin')">إدارة</button>
+        </div>
+      </div>
+      <button class="side-logout" onclick="logout()">🚪 تسجيل الخروج</button>
+    </aside>
+    <div class="side-overlay" id="sideOverlay" onclick="toggleSidebar(false)"></div>
+
+    <main class="app-main">
+      <header class="app-topbar">
+        <button class="hamburger app-burger" onclick="toggleSidebar(true)">☰</button>
+        <div class="top-search">
+          <span>🔎</span>
+          <input id="globalSearch" type="search" placeholder="ابحث عن درس أو مادة أو اختبار…" onkeydown="if(event.key==='Enter')globalSearchGo()">
+        </div>
+        <div class="top-actions">
+          <div class="notif-wrap">
+            <button class="icon-btn" onclick="toggleNotifs(event)">🔔<span class="dot" id="notifDot"></span></button>
+            <div class="notif-panel hidden" id="notifPanel"></div>
+          </div>
+          <button class="icon-btn" title="الرسائل" onclick="navigate('messages')">✉️</button>
+          <span class="top-user"><span class="avatar sm" id="topAvatar">أح</span><span id="topName">—</span></span>
+        </div>
+      </header>
+      <div class="app-content" id="appContent"></div>
+    </main>
+  </div>
+  <nav class="bottom-nav" id="bottomNav"></nav>
+</div>
+
+<!-- ================= نافذة تسجيل الدخول ================= -->
+<div class="modal-back hidden" id="loginModal">
+  <div class="modal login-modal">
+    <button class="modal-close" onclick="closeLogin()">✕</button>
+    <div class="login-head"><span class="brand-badge lg">🎓</span><h3>تسجيل الدخول</h3><p>اختر نوع الحساب — البيانات التجريبية جاهزة، اضغط دخول فقط.</p></div>
+    <div class="login-roles" id="loginRoles">
+      <button data-role="student" class="active">🧑‍🎓 طالب</button>
+      <button data-role="teacher">👩‍🏫 معلم</button>
+      <button data-role="parent">👨‍👧‍👦 ولي أمر</button>
+      <button data-role="admin">🏫 إدارة</button>
+    </div>
+    <form onsubmit="submitLogin(event)">
+      <label>رقم الطالب / اسم المستخدم<input id="loginUser" value="ST-2026-1482" required></label>
+      <label>كلمة المرور<input id="loginPass" type="password" value="demo1234" required></label>
+      <button class="btn btn-primary full" type="submit">دخول إلى لوحتي ←</button>
+      <p class="login-note">هذه نسخة تجريبية: أي كلمة مرور ستعمل. في النسخة الرسمية تُسلَّم الحسابات من إدارة المدرسة.</p>
+    </form>
+  </div>
+</div>
+
+<!-- نافذة عامة (درس / تأكيدات) -->
+<div class="modal-back hidden" id="genericModal"><div class="modal wide" id="genericModalBody"></div></div>
+
+<div class="toast hidden" id="toast"></div>
+
+<div id="offlineBanner" class="hidden">📴 أنت غير متصل بالإنترنت الآن — ما فتحته من دروس وأنشطة على هذا الجهاز يظل متاحاً، وتقدمك محفوظ محلياً. <small>النطق الصوتي وخطوط الويب قد تحتاج اتصالاً. لا تدّعي هذه النسخة مزامنة سحابية دون اتصال.</small></div>
+<script src="assets/js/data.js"></script>
+<script src="assets/js/english8.js?v=20261028-dialogue-lab-u5-u7"></script>
+<script src="assets/js/activities.js?v=20261028-unit2-book-transcriptions"></script>
+<script src="assets/js/dialogues-data.js?v=20261028-dialogues-companion-scenes"></script>
+<script src="assets/js/dialogues.js?v=20261028-dialogues-companion-scenes"></script>
+<script src="assets/js/chatbot.js?v=20261028-dialogues-companion-scenes"></script>
+<script src="assets/js/studio-ai.js"></script>
+<script src="assets/js/audio-library.js?v=20261027-audio-deferred"></script>
+<script src="assets/js/scenes.js?v=20261028-dialogues-companion-scenes"></script>
+<script src="assets/js/app.js?v=20261028-dialogues-companion-scenes"></script>
+</body>
+</html>

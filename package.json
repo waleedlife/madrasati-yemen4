@@ -1,0 +1,14 @@
+{
+  "name": "madrasati-yemen",
+  "version": "1.0.0",
+  "description": "مدرستي اليمن — منصة تعليمية مدرسية متكاملة لطلاب اليمن (طالب/معلم/ولي أمر/إدارة)",
+  "private": true,
+  "scripts": {
+    "dev": "python3 -m http.server 5173 --bind 0.0.0.0",
+    "start": "python3 -m http.server 5173 --bind 0.0.0.0",
+    "check": "node --check assets/js/data.js && node --check assets/js/app.js && node --check assets/js/english8.js && node --check assets/js/activities.js && node --check assets/js/dialogues-data.js && node --check assets/js/dialogues.js && node --check assets/js/chatbot.js && node --check assets/js/studio-ai.js && node --check assets/js/audio-library.js && node --check assets/js/scenes.js",
+    "test": "node tests/smoke.mjs"
+  },
+  "keywords": ["yemen", "education", "lms", "arabic", "rtl", "school"],
+  "license": "MIT"
+}
